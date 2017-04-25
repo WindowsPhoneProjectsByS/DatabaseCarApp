@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="BazaDanych2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BazaDanych2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ListView x:ConnectionId='1' Background="Transparent" Margin="6" Grid.Row="0"
+                 Height="Auto" x:Name="CarListBox"                                               >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock x:Name="CarItem" 
+                               Text="{Binding FirstInfoSection}" FontSize="27" Margin="0,15,0,15"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="DeleteButton" Grid.Row="0" Grid.Column="0" Content="Usuń"
+                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
+
+            <Button x:Name="ShowButton" Grid.Row="0" Grid.Column="1" Content="Wyświetl"
+                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
+
+            <Button x:ConnectionId='2' x:Name="AddButton" Grid.Row="1" Grid.Column="0" Content="Dodaj"
+                                           
+                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
+
+            <Button x:ConnectionId='3' x:Name="EditButton" Grid.Row="1" Grid.Column="1" Content="Edytuj"
+                                            
+                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
+
+        </Grid>
+
+    </Grid>
+</Page>
+

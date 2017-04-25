@@ -1,0 +1,1 @@
+D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\BazaDanych2.csproj;arm

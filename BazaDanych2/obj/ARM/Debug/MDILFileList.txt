@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <file>\BazaDanych2.exe</file>
+  <file>\SQLite.Net.dll</file>
+  <file>\SQLite.Net.Platform.WinRT.dll</file>
+</Files>
