@@ -39,3 +39,8 @@ D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\AddE
 D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\AddEditPage.g.cs
 D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\AddEditPage.xaml
 D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\AddEditPage.xbf
+D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\bin\ARM\Debug\Pages\DisplayInfoPage.xbf
+D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\DisplayInfoPage.g.i.cs
+D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\DisplayInfoPage.g.cs
+D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\DisplayInfoPage.xaml
+D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\obj\ARM\Debug\Pages\DisplayInfoPage.xbf

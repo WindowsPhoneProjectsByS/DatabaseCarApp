@@ -10,7 +10,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
-using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -27,14 +26,14 @@ namespace BazaDanych2.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AddEditPage : Page
+    public sealed partial class DisplayInfoPage : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private DatabaseService dbService;
         private int carId;
-        private DatabaseService dbServiece;
 
-        public AddEditPage()
+        public DisplayInfoPage()
         {
             this.InitializeComponent();
 
@@ -105,13 +104,9 @@ namespace BazaDanych2.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
-
-            dbServiece = new DatabaseService();
-            GetDataFromPrevious(e);
-
-            PrepareLayout();
-            
-            
+            dbService = new DatabaseService();
+            carId = (int)e.Parameter;
+            PrepareControls();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -119,52 +114,10 @@ namespace BazaDanych2.Pages
             this.navigationHelper.OnNavigatedFrom(e);
         }
 
-        #endregion
-
-        public void PrepareLayout()
-        {
-            switch (Settings.operation)
-            {
-                case Settings.Operation.Add:
-                    PrepareViewForAdd();
-                    break;
-                case Settings.Operation.Edit:
-                    PrepareViewForEdit();
-                    break;
-                default:
-                    ShowProperMessage();
-                    break;
-            }
-        }
-
-
-        private void GetDataFromPrevious(NavigationEventArgs e)
-        {
-            if (Settings.operation == Settings.Operation.Edit)
-            {
-                carId = (int)e.Parameter;
-                Debug.WriteLine("Ustawiono Id: " + carId);
-            }
-        }
-
-
-        public void PrepareViewForAdd()
-        {
-            TitleOperation.Text = "Dodaj";
-            OperationButton.Content = "Dodaj";
-        }
-
-        public void PrepareViewForEdit()
-        {
-            TitleOperation.Text = "Edytuj";
-            OperationButton.Content = "Zapisz";
-
-            PrepareControls();
-        }
-
         private void PrepareControls()
         {
-            Car car = dbServiece.ReadCar(carId);
+            Debug.WriteLine("carId: " + carId);
+            Car car = dbService.ReadCar(carId);
 
             Producer.Text = car.Producer;
             Model.Text = car.Model;
@@ -174,59 +127,6 @@ namespace BazaDanych2.Pages
             Power.Text = car.Power.ToString();
         }
 
-        public async void ShowProperMessage()
-        {
-            MessageDialog msg = new MessageDialog("Wystąpił nie znany bład.");
-            await msg.ShowAsync();
-            Frame.Navigate(typeof(MainPage));
-        }
-
-        private void OperationButton_Click(object sender, RoutedEventArgs e)
-        {
-            switch (Settings.operation)
-            {
-                case Settings.Operation.Add:
-                    AddCarToDB();
-                    break;
-                case Settings.Operation.Edit:
-                    UpdateCar();
-                    break;
-            }
-        }
-
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
-        private void AddCarToDB()
-        {
-            Car car = new Car();
-            car.Producer = Producer.Text;
-            car.Model = Model.Text;
-            car.ProductionYear = Int32.Parse(ProductionYear.Text);
-            car.Capacity = Capacity.Text;
-            car.FuelType = FuelType.Text;
-            car.Power = Int32.Parse(Power.Text);
-
-            dbServiece.Insert(car);
-
-            Frame.Navigate(typeof(MainPage));
-        }
-
-        private void UpdateCar()
-        {
-            Car car = new Models.Car();
-
-            car.Id = carId;
-            car.Producer = Producer.Text;
-            car.Model = Model.Text;
-            car.ProductionYear = Int32.Parse(ProductionYear.Text);
-            car.Capacity = Capacity.Text;
-            car.FuelType = FuelType.Text;
-            car.Power = Int32.Parse(Power.Text);
-
-            dbServiece.UpdateCar(car);
-        }
+        #endregion
     }
 }

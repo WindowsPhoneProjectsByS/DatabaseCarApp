@@ -70,6 +70,9 @@
     <AppxPackagedFile Include="D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\bin\ARM\Debug\Pages\AddEditPage.xbf">
       <PackagePath>Pages\AddEditPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\bin\ARM\Debug\Pages\DisplayInfoPage.xbf">
+      <PackagePath>Pages\DisplayInfoPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programowanie\VisualProjects\BazaDanych2\BazaDanych2\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

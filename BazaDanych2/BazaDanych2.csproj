@@ -102,6 +102,10 @@
     <Compile Include="Pages\AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DatabseService.cs" />
+    <Compile Include="Pages\DisplayInfoPage.xaml.cs">
+      <DependentUpon>DisplayInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Settings.cs" />
@@ -131,6 +135,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\AddEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DisplayInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

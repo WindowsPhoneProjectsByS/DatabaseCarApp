@@ -68,14 +68,11 @@ namespace BazaDanych2
 
         private void CarListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListViewItem listItem = ((sender as ListView).SelectedItem as ListViewItem);
-            if (listItem != null)
+            if (CarListBox.SelectedIndex != -1)
             {
-                listItem.Foreground = new SolidColorBrush(Colors.Red);
-            }
-            else
-            {
-                Debug.WriteLine("Nie pokolorowało");
+                Car car = CarListBox.SelectedItem as Car;
+                actualChoosenId = car.Id;
+                Debug.WriteLine("Wybrane Id: " + actualChoosenId);
             }
         }
 
@@ -90,11 +87,17 @@ namespace BazaDanych2
             if (actualChoosenId != -1)
             {
                 Settings.operation = Settings.Operation.Edit;
-                Frame.Navigate(typeof(AddEditPage));
+                Frame.Navigate(typeof(AddEditPage), actualChoosenId);
             }
             
         }
 
-       
+        private void ShowButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (actualChoosenId != -1)
+            {
+                Frame.Navigate(typeof(DisplayInfoPage), actualChoosenId);
+            }
+        }
     }
 }

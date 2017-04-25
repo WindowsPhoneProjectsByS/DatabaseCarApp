@@ -1,0 +1,114 @@
+﻿<Page
+    x:Class="BazaDanych2.Pages.DisplayInfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BazaDanych2.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="Samochody" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock x:Name="TitleOperation" Text="Wyświetl" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            
+
+            <Grid x:Name="Information" Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Row="0" Grid.Column="0">
+                    <TextBlock Text="Marka:" VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Viewbox>
+                <Viewbox Grid.Row="1" Grid.Column="0">
+                    <TextBlock Text="Model:" VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Viewbox>
+                <Viewbox  Grid.Row="2" Grid.Column="0">
+                    <TextBlock  Text="Rok Produkcji:" VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Viewbox>
+                <Viewbox Grid.Row="3" Grid.Column="0">
+                    <TextBlock  Text="Poj. Silnika:" VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Viewbox>
+                <Viewbox  Grid.Row="4" Grid.Column="0">
+                    <TextBlock  Text="Paliwo:" VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Viewbox>
+                <Viewbox Grid.Row="5" Grid.Column="0">
+                    <TextBlock  Text="Moc Silnika:" VerticalAlignment="Center" 
+                               HorizontalAlignment="Center"/>
+                </Viewbox>
+
+
+
+
+                <TextBlock x:Name="Producer"  
+                    VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" 
+                           HorizontalAlignment="Stretch" Margin="12,10,12,10"
+                           TextAlignment="Center" FontSize="25" Text="Ford"/>
+
+
+                <TextBlock   x:Name="Model"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"
+                          HorizontalAlignment="Stretch" Margin="12,10,12,10"
+                          TextAlignment="Center" FontSize="25"/>
+
+
+                <TextBlock  x:Name="ProductionYear" VerticalAlignment="Center" 
+                               HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="1"
+                          Margin="12,10,12,10"
+                          TextAlignment="Center" FontSize="25"/>
+
+
+                <TextBlock  x:Name="Capacity"  VerticalAlignment="Center" 
+                               HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="1"
+                          Margin="12,10,12,10"
+                          TextAlignment="Center" FontSize="25"/>
+
+
+                <TextBlock  x:Name="FuelType" VerticalAlignment="Center" 
+                               HorizontalAlignment="Stretch" Grid.Row="4" Grid.Column="1"
+                          Margin="12,10,12,10"
+                          TextAlignment="Center" FontSize="25"/>
+
+                <TextBlock  x:Name="Power" VerticalAlignment="Center" 
+                               HorizontalAlignment="Stretch"
+                              Margin="12,10,12,10" Grid.Row="5" Grid.Column="1"
+                          TextAlignment="Center" FontSize="25"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

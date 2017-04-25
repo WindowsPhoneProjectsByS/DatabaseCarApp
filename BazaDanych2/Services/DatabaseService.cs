@@ -3,6 +3,7 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,25 +14,7 @@ namespace BazaDanych2.Services
     {
         SQLiteConnection dbConn;
 
-        public async Task<bool> OnCreate(string DB_PATH)
-        {
-            try
-            {
-                if (!CheckFileExists(DB_PATH).Result)
-                {
-                    using (dbConn = new SQLiteConnection(DB_PATH))
-                    {
-                        dbConn.CreateTable<Models.Car>();
-                    }
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-            return false;
-        }
+        
 
         private async Task<bool> CheckFileExists(String fileName)
         {
@@ -51,6 +34,7 @@ namespace BazaDanych2.Services
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
                 var car = dbConn.Query<Car>("select * from Car Where Id=" + carId).FirstOrDefault();
+                Debug.WriteLine("car ID: " + carId);
                 return car;
             }
         }

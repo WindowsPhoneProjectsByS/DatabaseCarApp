@@ -16,6 +16,38 @@
 
         <ListView x:ConnectionId='1' Background="Transparent" Margin="6" Grid.Row="0"
                  Height="Auto" x:Name="CarListBox"                                               >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                        </VisualStateGroup>
+                                        <VisualStateGroup x:Name="SelectionStates">
+                                            <VisualState x:Name="Unselected">
+                                                <Storyboard>
+                                                    <ColorAnimation Duration="0" Storyboard.TargetName="myback" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Transparent"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="SelectedUnfocused">
+                                                <Storyboard>
+                                                    <ColorAnimation Duration="0" Storyboard.TargetName="myback" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Red"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Border x:Name="myback" Background="Transparent">
+                                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -39,14 +71,14 @@
             <Button x:Name="DeleteButton" Grid.Row="0" Grid.Column="0" Content="Usuń"
                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
 
-            <Button x:Name="ShowButton" Grid.Row="0" Grid.Column="1" Content="Wyświetl"
-                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
+            <Button x:ConnectionId='2' x:Name="ShowButton" Grid.Row="0" Grid.Column="1" Content="Wyświetl"
+                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"                         />
 
-            <Button x:ConnectionId='2' x:Name="AddButton" Grid.Row="1" Grid.Column="0" Content="Dodaj"
+            <Button x:ConnectionId='3' x:Name="AddButton" Grid.Row="1" Grid.Column="0" Content="Dodaj"
                                            
                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
 
-            <Button x:ConnectionId='3' x:Name="EditButton" Grid.Row="1" Grid.Column="1" Content="Edytuj"
+            <Button x:ConnectionId='4' x:Name="EditButton" Grid.Row="1" Grid.Column="1" Content="Edytuj"
                                             
                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
 
