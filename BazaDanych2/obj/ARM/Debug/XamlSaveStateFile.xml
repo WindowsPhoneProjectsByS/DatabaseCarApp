@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="d:\programowanie\visualprojects\bazadanych2\bazadanych2\obj\arm\debug\intermediatexaml\bazadanych2.exe" HashGuid="322773fa-5dfe-5879-5340-9f6a31d7b5a8" />
+    <LocalAssembly PathName="d:\programowanie\visualprojects\bazadanych2\bazadanych2\obj\arm\debug\intermediatexaml\bazadanych2.exe" HashGuid="e4bbaf44-dae7-b2ec-49b8-7d765fe2549c" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
     <ReferenceAssembly PathName="d:\programowanie\visualprojects\bazadanych2\packages\sqlite.net.core-pcl.3.1.1\lib\portable-win8+net45+wp8+wpa81+monoandroid1+monotouch1\sqlite.net.dll" HashGuid="2223cbf7-68d4-e5e4-e5e4-a19696ad83b6" />
     <ReferenceAssembly PathName="d:\programowanie\visualprojects\bazadanych2\packages\sqlite.net-pcl.3.1.1\lib\portable-win81+wpa81\sqlite.net.platform.winrt.dll" HashGuid="1bc7eaa0-e36a-f105-20d8-c57b14216cea" />

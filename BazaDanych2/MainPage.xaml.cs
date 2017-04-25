@@ -99,5 +99,14 @@ namespace BazaDanych2
                 Frame.Navigate(typeof(DisplayInfoPage), actualChoosenId);
             }
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (actualChoosenId != -1)
+            {
+                dbService.DeleteCar(actualChoosenId);
+                PrepareCarList();
+            }
+        }
     }
 }

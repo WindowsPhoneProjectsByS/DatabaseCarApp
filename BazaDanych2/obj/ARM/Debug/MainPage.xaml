@@ -68,17 +68,17 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="DeleteButton" Grid.Row="0" Grid.Column="0" Content="Usuń"
-                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
+            <Button x:ConnectionId='2' x:Name="DeleteButton" Grid.Row="0" Grid.Column="0" Content="Usuń"
+                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"                           />
 
-            <Button x:ConnectionId='2' x:Name="ShowButton" Grid.Row="0" Grid.Column="1" Content="Wyświetl"
+            <Button x:ConnectionId='3' x:Name="ShowButton" Grid.Row="0" Grid.Column="1" Content="Wyświetl"
                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"                         />
 
-            <Button x:ConnectionId='3' x:Name="AddButton" Grid.Row="1" Grid.Column="0" Content="Dodaj"
+            <Button x:ConnectionId='4' x:Name="AddButton" Grid.Row="1" Grid.Column="0" Content="Dodaj"
                                            
                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
 
-            <Button x:ConnectionId='4' x:Name="EditButton" Grid.Row="1" Grid.Column="1" Content="Edytuj"
+            <Button x:ConnectionId='5' x:Name="EditButton" Grid.Row="1" Grid.Column="1" Content="Edytuj"
                                             
                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="20" Margin="15,0,15,0"/>
 

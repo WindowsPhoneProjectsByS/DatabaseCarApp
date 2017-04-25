@@ -91,7 +91,7 @@
 
                 <TextBox  x:Name="ProductionYear" VerticalAlignment="Center" 
                                HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="1"
-                          Margin="12,10,12,10"
+                          Margin="12,10,12,10" InputScope="Number"
                           TextAlignment="Center" FontSize="25"/>
 
 
@@ -107,7 +107,7 @@
                           TextAlignment="Center" FontSize="25"/>
 
                 <TextBox  x:Name="Power" VerticalAlignment="Center" 
-                               HorizontalAlignment="Stretch"
+                               HorizontalAlignment="Stretch" InputScope="Number"
                               Margin="12,10,12,10" Grid.Row="5" Grid.Column="1"
                           TextAlignment="Center" FontSize="25"/>
 
